@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
-  final Function onPressed;
+  final VoidCallback onPressed;
   final Color? color;
   final Color? textColor;
   final double? width;
@@ -25,29 +25,28 @@ class CustomButton extends StatelessWidget {
     this.height = 30,
     this.radius,
     this.fontSize,
-    this.fontWeight,
+    this.fontWeight = FontWeight.bold,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        onPressed;
-      },
+      onTap: onPressed,
       child: Container(
         width: width,
         height: height,
-        padding: EdgeInsets.all(5),
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: AppColors.gradientColors),
-          border: Border.all(width: 0.58, color: Colors.white30),
-          borderRadius: BorderRadius.circular(20),
+          border: Border.all(width: 1, color: Colors.white),
+          borderRadius: BorderRadius.circular(5),
         ),
-        child: CustomText(
-          text: text,
-          fontSize: fontSize,
-          color: textColor,
-          fontWeight: fontWeight,
+        child: Center(
+          child: CustomText(
+            text: text,
+            fontSize: fontSize,
+            color: textColor,
+            fontWeight: fontWeight,
+          ),
         ),
       ),
     );

@@ -1,4 +1,4 @@
-import 'package:empowergo/view/Home/homePage.dart';
+import 'package:empowergo/view/Blind%20Interface/Home/blindHomePage.dart';
 import 'package:empowergo/view/Onboarding/onbordingScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/onboarding',
       home: OnboardingScreen(),
       routes: {
-        '/home': (context) => HomePage(),
+        
         // '/loginScreen': (context) => LoginScreen(),
         // '/signUpScreen': (context) => SignUpScreen(),
         // '/infoForm': (context) => GeneralInfoForm(),

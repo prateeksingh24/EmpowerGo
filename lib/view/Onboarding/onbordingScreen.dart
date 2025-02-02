@@ -1,4 +1,5 @@
 import 'package:empowergo/theme/appColor.dart';
+import 'package:empowergo/view/Login/introScreen.dart';
 import 'package:empowergo/widgets/customWidgets/customButtom.dart';
 import 'package:empowergo/widgets/customWidgets/customText.dart';
 import 'package:flutter/material.dart';
@@ -49,9 +50,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             },
             itemBuilder: (context, index) {
               return _buildScreen(
-                title: onboardingData[index]["title"]!,
-                content: onboardingData[index]["content"]!,
-              );
+                  title: onboardingData[index]["title"]!,
+                  content: onboardingData[index]["content"]!,
+                  index: index);
             },
           ),
           Positioned(
@@ -71,7 +72,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
-  Widget _buildScreen({required String title, required String content}) {
+  Widget _buildScreen(
+      {required String title, required String content, int? index}) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -85,7 +87,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Gap(250),
+                const Gap(320),
                 CustomText(
                   text: title,
                   fontWeight: FontWeight.bold,
@@ -100,8 +102,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     align: TextAlign.center,
                   ),
                 ),
-                Gap(20),
-                CustomButton(text: "Login", onPressed: () {})
+                Gap(100),
+                index == 2
+                    ? CustomButton(
+                        text: "Login",
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Introscreen()));
+                        })
+                    : Container(),
               ],
             ),
             Positioned(
