@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static Color kbackground = const Color(0x005452bf);
+  static Color kbackground = const Color(0xff5452bf);
   static Color kLightWhite = const Color(0xFFFDFDFD);
   static Color kLavender = const Color(0xFFEBD9EF);
   static Color kPeriwinkle = const Color(0xFFE0E9FF);
@@ -12,7 +12,7 @@ class AppColors {
   static Color kmain = const Color(0xFFFF7F56);
   static Color kmain2 = const Color(0xFFE83939);
   static List<Color> gradientColors = [
-    const Color(0xFFFF7F56),
-    const Color(0xFFE83939)
+    const Color(0xff5452bf),
+    const Color.fromARGB(255, 62, 60, 159)
   ];
 }
